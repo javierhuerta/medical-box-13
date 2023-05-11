@@ -21,6 +21,11 @@ export class BoxState {
     }
 
     @Selector()
+    static controlarDonAriel({ boxes }: BoxStateModel) {
+        return boxes.find(box => box.doctor === 'Ariel Mamani');
+    }
+
+    @Selector()
     static boxAvailableList({ boxes }: BoxStateModel) {
         return boxes.filter(box => box.isAvailable);
     }

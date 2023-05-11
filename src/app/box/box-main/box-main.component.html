@@ -3,6 +3,10 @@
     <div>
         <h1>MEDICAL BOX</h1>
         <app-box-patient-admission></app-box-patient-admission>
+
+        <ng-container *ngIf="(boxAriel$ | async) !== undefined">
+            <app-box-detail [box]="boxAriel$ | async"></app-box-detail>
+        </ng-container>
     </div>
     
     <!-- Listado de boxes-->
